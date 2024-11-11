@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigganal Slaves</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nigganal Slaves</h1>
+        <form id="orderForm">
+            <div>
+                <label for="food">Select Black Food</label>
+                <select id="food">
+                    <option value="0">---Select Black Food---</option>
+                    <option value="50">Nigger - $50</option>
+                    <option value="80">Nizza - $80</option>
+                    <option value="30">Niwich - $30</option>
+                </select>
+            </div>
+            <div>
+                <label for="drink">Select Black Drink</label>
+                <select id="drink">
+                    <option value="0">---Select Black Drink---</option>
+                    <option value="50">Hot Nigga - Rp50</option>
+                    <option value="80">Fantastic - Rp80</option>
+                    <option value="30">Coca Colastic  - Rp30</option>
+                </select>
+            </div>
+            <button class="buttonsu" type="button" id="orderButton">Order Bitch!!!</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('orderButton').onclick = function() {
+            const foodPrice = parseInt(document.getElementById('food').value);
+            const drinkPrice = parseInt(document.getElementById('drink').value);
+            let totalPrice = foodPrice + drinkPrice;
+            let discount = 0;
+            if (totalPrice > 100) {
+                discount = totalPrice * 0.1;
+                totalPrice -= discount; // totalPrice = totalPrice - discount
+            }
+            const resultDiv = document.getElementById("result");
+            if (totalPrice > 0) {
+                resultDiv.innerHTML = `
+                   total : Rp${totalPrice}<br>
+                   discount : Rp${discount.toFixed(2)}<br>
+                   Final Price Rp${totalPrice.toFixed(2)}`;
+
+            }
+            else {
+                resultDiv.innerHTML = "select the black one nigga!!!";
+            }
+        }
+    </script>
+</body>
+</html>
